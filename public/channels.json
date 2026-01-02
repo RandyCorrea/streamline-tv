@@ -1,0 +1,194 @@
+[
+  {
+    "id": "channel-1",
+    "name": "Al Jazeera English",
+    "logo": "https://raw.githubusercontent.com/AramVartanyan/iptvx/main/logos/AJE.png",
+    "category": "News",
+    "country": "Qatar",
+    "streamUrl": "https://live-hls-web-aje.getaj.net/AJE/01.m3u8"
+  },
+  {
+    "id": "channel-2",
+    "name": "France 24 English",
+    "logo": "https://raw.githubusercontent.com/AramVartanyan/iptvx/main/logos/F24.png",
+    "category": "News",
+    "country": "France",
+    "streamUrl": "https://stream.france24.com/F24_EN_LO_HLS/live_web.m3u8"
+  },
+  {
+    "id": "channel-3",
+    "name": "DW English",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Deutsche_Welle_symbol_2012.svg/512px-Deutsche_Welle_symbol_2012.svg.png",
+    "category": "News",
+    "country": "Germany",
+    "streamUrl": "https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8"
+  },
+  {
+    "id": "channel-4",
+    "name": "CGTN",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/CGTN_Logo.svg/512px-CGTN_Logo.svg.png",
+    "category": "News",
+    "country": "China",
+    "streamUrl": "https://news.cgtn.com/resource/live/english/cgtn-news.m3u8"
+  },
+  {
+    "id": "channel-5",
+    "name": "RT Documentary",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Russia-today-logo.svg/512px-Russia-today-logo.svg.png",
+    "category": "Documentary",
+    "country": "Russia",
+    "streamUrl": "https://rt-rtd.rttv.com/live/rtdoc/playlist.m3u8"
+  },
+  {
+    "id": "channel-6",
+    "name": "NASA TV",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/512px-NASA_logo.svg.png",
+    "category": "Science",
+    "country": "USA",
+    "streamUrl": "https://nasa-i.akamaihd.net/hls/live/253565/NASA-NTV1-Public/master.m3u8"
+  },
+  {
+    "id": "channel-7",
+    "name": "Euronews",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Euronews_2016.svg/512px-Euronews_2016.svg.png",
+    "category": "News",
+    "country": "France",
+    "streamUrl": "https://euronews-euronews-english-1-eu.plex.wurl.tv/playlist.m3u8"
+  },
+  {
+    "id": "channel-8",
+    "name": "NHK World Japan",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/NHK_World-Japan_2018_logo.svg/512px-NHK_World-Japan_2018_logo.svg.png",
+    "category": "News",
+    "country": "Japan",
+    "streamUrl": "https://nhkwlive-xjp.akamaized.net/hls/live/2003459/nhkwlive-xjp-en/index.m3u8"
+  },
+  {
+    "id": "channel-9",
+    "name": "Arirang TV",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Arirang_TV_logo.svg/512px-Arirang_TV_logo.svg.png",
+    "category": "Entertainment",
+    "country": "South Korea",
+    "streamUrl": "https://amdlive-ch01-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8"
+  },
+  {
+    "id": "channel-10",
+    "name": "TRT World",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/TRT_World_logo.svg/512px-TRT_World_logo.svg.png",
+    "category": "News",
+    "country": "Turkey",
+    "streamUrl": "https://tv-trtworld.medya.trt.com.tr/master.m3u8"
+  },
+  {
+    "id": "channel-11",
+    "name": "ABC News AU",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/ABC_News_%28Australia%29.svg/512px-ABC_News_%28Australia%29.svg.png",
+    "category": "News",
+    "country": "Australia",
+    "streamUrl": "https://abc-iview-mediapackagestreams-1.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index.m3u8"
+  },
+  {
+    "id": "channel-12",
+    "name": "Sky News",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Sky_News_logo_2023.svg/512px-Sky_News_logo_2023.svg.png",
+    "category": "News",
+    "country": "UK",
+    "streamUrl": "https://skynews-live.akamaized.net/hls/live/2024764/skynews/master.m3u8"
+  },
+  {
+    "id": "channel-13",
+    "name": "Bloomberg TV",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/New_Bloomberg_Logo.svg/512px-New_Bloomberg_Logo.svg.png",
+    "category": "Business",
+    "country": "USA",
+    "streamUrl": "https://bloomberg.com/media-manifest/streams/us.m3u8"
+  },
+  {
+    "id": "channel-14",
+    "name": "Fashion TV",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Fashion_TV_logo.svg/512px-Fashion_TV_logo.svg.png",
+    "category": "Lifestyle",
+    "country": "France",
+    "streamUrl": "https://fash1043.cloudycdn.services/slive/_definst_/ftv_ftv_paris_baseline_hd.smil/playlist.m3u8"
+  },
+  {
+    "id": "channel-15",
+    "name": "CNN International",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/CNN.svg/512px-CNN.svg.png",
+    "category": "News",
+    "country": "USA",
+    "streamUrl": "https://cnn-cnninternational-1-eu.rakuten.wurl.tv/playlist.m3u8"
+  },
+  {
+    "id": "channel-16",
+    "name": "BBC World News",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/BBC_World_News_2022_%28Boxed%29.svg/512px-BBC_World_News_2022_%28Boxed%29.svg.png",
+    "category": "News",
+    "country": "UK",
+    "streamUrl": "https://vs-hls-push-uk-live.akamaized.net/x=3/i=urn:bbc:pips:service:bbc_news_channel_hd/master.m3u8"
+  },
+  {
+    "id": "channel-17",
+    "name": "TV5 Monde",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/TV5MONDE_2017.svg/512px-TV5MONDE_2017.svg.png",
+    "category": "General",
+    "country": "France",
+    "streamUrl": "https://ott.tv5monde.com/Content/HLS/Live/channel(info)/index.m3u8"
+  },
+  {
+    "id": "channel-18",
+    "name": "NDTV 24x7",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/NDTV_24x7_logo.svg/512px-NDTV_24x7_logo.svg.png",
+    "category": "News",
+    "country": "India",
+    "streamUrl": "https://ndtv24x7live.akamaized.net/hls/live/2020542/ndtv24x7/master.m3u8"
+  },
+  {
+    "id": "channel-19",
+    "name": "TVE 24H",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Logo_TVE-24h.svg/512px-Logo_TVE-24h.svg.png",
+    "category": "News",
+    "country": "Spain",
+    "streamUrl": "https://ztnr.rtve.es/ztnr/1694255.m3u8"
+  },
+  {
+    "id": "channel-20",
+    "name": "RTP Internacional",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/RTP_Internacional_logo.svg/512px-RTP_Internacional_logo.svg.png",
+    "category": "General",
+    "country": "Portugal",
+    "streamUrl": "https://streaming-live.rtp.pt/liverepeater/rtpi.smil/playlist.m3u8"
+  },
+  {
+    "id": "channel-21",
+    "name": "ESPN Deportes",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/512px-ESPN_wordmark.svg.png",
+    "category": "Sports",
+    "country": "USA",
+    "streamUrl": "https://espn-deportes.pluto.tv/hls/stream.m3u8"
+  },
+  {
+    "id": "channel-22",
+    "name": "Trace Urban",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Trace_Urban_Logo.svg/512px-Trace_Urban_Logo.svg.png",
+    "category": "Music",
+    "country": "France",
+    "streamUrl": "https://trace-urban.akamaized.net/hls/live/stream.m3u8"
+  },
+  {
+    "id": "channel-23",
+    "name": "MTV Music 24/7",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/MTV_2021_%28brand_version%29.svg/512px-MTV_2021_%28brand_version%29.svg.png",
+    "category": "Music",
+    "country": "USA",
+    "streamUrl": "https://mtvlive-stream.pluto.tv/hls/stream.m3u8"
+  },
+  {
+    "id": "channel-24",
+    "name": "Nickelodeon",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Nickelodeon_2023_logo_%28outline%29.svg/512px-Nickelodeon_2023_logo_%28outline%29.svg.png",
+    "category": "Kids",
+    "country": "USA",
+    "streamUrl": "https://nick-stream.pluto.tv/hls/stream.m3u8"
+  }
+]
