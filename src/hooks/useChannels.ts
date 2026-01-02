@@ -1,8 +1,8 @@
-import { useState, useEffect, useMemo } from 'react';
-import { Channel, ChannelsByCategory } from '@/types/channel';
+import { useState, useEffect, useMemo } from "react";
+import { Channel, ChannelsByCategory } from "@/types/channel";
 
-const FAVORITES_KEY = 'iptv-favorites';
-const RECENT_KEY = 'iptv-recent';
+const FAVORITES_KEY = "iptv-favorites";
+const RECENT_KEY = "iptv-recent";
 const MAX_RECENT = 10;
 
 export function useChannels() {
@@ -16,110 +16,131 @@ export function useChannels() {
   useEffect(() => {
     async function loadChannels() {
       try {
-        const response = await fetch(import.meta.env.BASE_URL + "channels.json");
+        const response = await fetch(
+          `${import.meta.env.BASE_URL}channels.json`
+        );
+
         if (!response.ok) {
-          throw new Error('Failed to load channels');
+          throw new Error("Failed to load channels.json");
         }
+
         const data = await response.json();
 
-if (!Array.isArray(data)) {
-  console.error("channels.json is not an array", data);
-  setChannels([]);
-  return;
-}
+        const channelArray: Channel[] = Array.isArray(data)
+          ? data
+          : Array.isArray(data?.channels)
+          ? data.channels
+          : [];
 
-setChannels(data);
+        // Normalize channels (CRITICAL)
+        const normalized = channelArray
+          .filter(Boolean)
+          .map((c, index) => ({
+            id: c.id ?? `${c.name ?? "channel"}-${index}`,
+            name: c.name ?? "Unknown",
+            logo: c.logo ?? "",
+            category: c.category ?? "Uncategorized",
+            country: c.country ?? "Unknown",
+            streamUrl: c.streamUrl,
+          }))
+          .filter(c => typeof c.streamUrl === "string");
+
+        setChannels(normalized);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Unknown error');
+        console.error("Channel load error:", err);
+        setError(err instanceof Error ? err.message : "Unknown error");
+        setChannels([]);
       } finally {
         setLoading(false);
       }
     }
+
     loadChannels();
   }, []);
 
-  // Load favorites from localStorage
+  // Load favorites
   useEffect(() => {
-    const stored = localStorage.getItem(FAVORITES_KEY);
-    if (stored) {
-      try {
-        setFavorites(JSON.parse(stored));
-      } catch {
-        setFavorites([]);
-      }
+    try {
+      const stored = localStorage.getItem(FAVORITES_KEY);
+      if (stored) setFavorites(JSON.parse(stored));
+    } catch {
+      setFavorites([]);
     }
   }, []);
 
-  // Load recent from localStorage
+  // Load recent
   useEffect(() => {
-    const stored = localStorage.getItem(RECENT_KEY);
-    if (stored) {
-      try {
-        setRecentIds(JSON.parse(stored));
-      } catch {
-        setRecentIds([]);
-      }
+    try {
+      const stored = localStorage.getItem(RECENT_KEY);
+      if (stored) setRecentIds(JSON.parse(stored));
+    } catch {
+      setRecentIds([]);
     }
   }, []);
 
-  // Group channels by category
+  // Group by category
   const channelsByCategory = useMemo<ChannelsByCategory>(() => {
+    if (!Array.isArray(channels)) return {};
+
     return channels.reduce((acc, channel) => {
-      const category = channel.category || 'Uncategorized';
-      if (!acc[category]) {
-        acc[category] = [];
-      }
+      const category = channel.category || "Uncategorized";
+      if (!acc[category]) acc[category] = [];
       acc[category].push(channel);
       return acc;
     }, {} as ChannelsByCategory);
   }, [channels]);
 
-  // Group channels by country
+  // Group by country
   const channelsByCountry = useMemo<ChannelsByCategory>(() => {
-    return (channels || []).reduce((acc, channel) => {
-      const country = channel.country || 'Unknown';
-      if (!acc[country]) {
-        acc[country] = [];
-      }
+    if (!Array.isArray(channels)) return {};
+
+    return channels.reduce((acc, channel) => {
+      const country = channel.country || "Unknown";
+      if (!acc[country]) acc[country] = [];
       acc[country].push(channel);
       return acc;
     }, {} as ChannelsByCategory);
   }, [channels]);
 
-  // Get favorite channels
+  // Favorites
   const favoriteChannels = useMemo(() => {
+    if (!Array.isArray(channels)) return [];
     return channels.filter(c => favorites.includes(c.id));
   }, [channels, favorites]);
 
-  // Get recent channels
+  // Recent
   const recentChannels = useMemo(() => {
+    if (!Array.isArray(channels)) return [];
     return recentIds
       .map(id => channels.find(c => c.id === id))
-      .filter((c): c is Channel => c !== undefined);
+      .filter((c): c is Channel => Boolean(c));
   }, [channels, recentIds]);
 
-  // Toggle favorite
   const toggleFavorite = (channelId: string) => {
     setFavorites(prev => {
-      const newFavorites = prev.includes(channelId)
+      const next = prev.includes(channelId)
         ? prev.filter(id => id !== channelId)
         : [...prev, channelId];
-      localStorage.setItem(FAVORITES_KEY, JSON.stringify(newFavorites));
-      return newFavorites;
+      try {
+        localStorage.setItem(FAVORITES_KEY, JSON.stringify(next));
+      } catch {}
+      return next;
     });
   };
 
-  // Add to recent
   const addToRecent = (channelId: string) => {
     setRecentIds(prev => {
-      const filtered = prev.filter(id => id !== channelId);
-      const newRecent = [channelId, ...filtered].slice(0, MAX_RECENT);
-      localStorage.setItem(RECENT_KEY, JSON.stringify(newRecent));
-      return newRecent;
+      const next = [channelId, ...prev.filter(id => id !== channelId)].slice(
+        0,
+        MAX_RECENT
+      );
+      try {
+        localStorage.setItem(RECENT_KEY, JSON.stringify(next));
+      } catch {}
+      return next;
     });
   };
 
-  // Check if channel is favorite
   const isFavorite = (channelId: string) => favorites.includes(channelId);
 
   return {
