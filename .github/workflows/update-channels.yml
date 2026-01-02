@@ -36,7 +36,7 @@ jobs:
       - name: Parse M3U and generate channels.json
         run: |
           if [ -f playlist.m3u ]; then
-            node scripts/parse-m3u.js playlist.m3u public/channels.json
+            node scripts/parse-m3u.cjs playlist.m3u public/channels.json
             rm playlist.m3u
           fi
 
