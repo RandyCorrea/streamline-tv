@@ -16,12 +16,19 @@ export function useChannels() {
   useEffect(() => {
     async function loadChannels() {
       try {
-        const response = await fetch('/channels.json');
+        const response = await fetch(import.meta.env.BASE_URL + "channels.json");
         if (!response.ok) {
           throw new Error('Failed to load channels');
         }
         const data = await response.json();
-        setChannels(data);
+
+if (!Array.isArray(data)) {
+  console.error("channels.json is not an array", data);
+  setChannels([]);
+  return;
+}
+
+setChannels(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unknown error');
       } finally {
@@ -69,7 +76,7 @@ export function useChannels() {
 
   // Group channels by country
   const channelsByCountry = useMemo<ChannelsByCategory>(() => {
-    return channels.reduce((acc, channel) => {
+    return (channels || []).reduce((acc, channel) => {
       const country = channel.country || 'Unknown';
       if (!acc[country]) {
         acc[country] = [];
