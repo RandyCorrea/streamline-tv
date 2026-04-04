@@ -2299,7 +2299,7 @@
     "id": "channel-288",
     "name": "ABC-TV Paraguay",
     "logo": "https://i.imgur.com/OqfBMGy.png",
-    "category": "General",
+    "category": "News",
     "country": "Unknown",
     "streamUrl": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/7.m3u8"
   },
@@ -12354,7 +12354,7 @@
   {
     "id": "channel-1545",
     "name": "C9N",
-    "logo": "https://i.imgur.com/Cp4zJ7O.png",
+    "logo": "https://i.imgur.com/iXkwP31.png",
     "category": "News",
     "country": "Unknown",
     "streamUrl": "https://alba-py-c9n-c9n.stream.mediatiquestream.com/playlist.m3u8"
@@ -89682,7 +89682,7 @@
   {
     "id": "channel-11211",
     "name": "Zee Cine Classic (1080p)",
-    "logo": "https://d3bd0tgyk368z1.cloudfront.net/zeelg/LG%20logo%20artwork/400x200/zcinecla.png",
+    "logo": "https://i.imgur.com/QCRhS1n.png",
     "category": "Classic",
     "country": "Unknown",
     "streamUrl": "https://amg00862-amg00862c8-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c8-amgplt0173/playlist.m3u8"
